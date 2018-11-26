@@ -64,21 +64,22 @@
                                 android:text="Oleg Chobotar"
                                 android:textSize="25sp"
                                 android:textStyle="bold" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_margin="10dp"
-                                android:text="Programmer"
-                                android:textSize="17sp" />
-
+                                android:layout_marginTop="5dp"
+                                android:text="Top Editor"
+                                android:textColor="#d4da19"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_marginTop="20dp"
-                                android:text="I love fantastic things, colos and good design"
+                                android:layout_marginTop="10dp"
+                                android:text="I love fantastic things, colors and good design"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:textStyle="italic" />
