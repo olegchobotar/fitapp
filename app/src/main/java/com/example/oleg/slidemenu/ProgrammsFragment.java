@@ -29,22 +29,48 @@ public class ProgrammsFragment extends Fragment {
         programs = new ArrayList<ProgramRow>();
         programs.add(new ProgramRow("The best exercises for full body.",
                 "It'll help u to prepare your body for much harder work. " +
-                        "U must to be already strong enough.", Arrays.asList("Legs", "Chest")));
+                        "U must to be already strong enough.", Arrays.asList("Legs", "Arms")));
         programs.add(new ProgramRow("The best exercises for full body.",
-                "It'll help u to prepare your body for much harder work. " +
-                        "U must to be already strong enough.", Arrays.asList("Legs", "Chest")));
+                "Maecenas finibus quis lacus." +
+                        "Maecenas finibus quis lacus sed consectetur. Proin ut mauris a massa varius iaculis. " +
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+                        "Duis pellentesque orci sed sollicitudin vehicula..", Arrays.asList("ABS", "Chest")));
+
+        programs.add(new ProgramRow("Program to make you grow.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+                        " Cras in ex aliquam, semper velit non, molestie sapien." +
+                        " Duis fermentum porttitor leo, eu placerat mi feugiat non.", Arrays.asList("Shoulders", "Chest", "Arms")));
 
         programs.add(new ProgramRow("The best exercises for full body.",
                 "It'll help u to prepare your body for much harder work. " +
-                        "U must to be already strong enough.", Arrays.asList("Legs", "Chest")));
+                        "U must to be already strong enough.", Arrays.asList("Legs")));
+
+        programs.add(new ProgramRow("Nam nec tortor sit amet.",
+                "Sed sodales dolor nec lorem consequat elementum. " +
+                        "Nam nec tortor sit amet leo suscipit eleifend. Proin tellus diam, " +
+                        "venenatis nec mattis ac, sodales quis tellus. ", Arrays.asList("Legs", "Chest")));
+        programs.add(new ProgramRow("The best exercises for full body.",
+                "It'll help u to prepare your body for much harder work. " +
+                        "U must to be already strong enough.", Arrays.asList("Legs", "Arms")));
+        programs.add(new ProgramRow("The best exercises for full body.",
+                "Maecenas finibus quis lacus." +
+                        "Maecenas finibus quis lacus sed consectetur. Proin ut mauris a massa varius iaculis. " +
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+                        "Duis pellentesque orci sed sollicitudin vehicula..", Arrays.asList("ABS", "Chest")));
+
+        programs.add(new ProgramRow("Program to make you grow.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+                        " Cras in ex aliquam, semper velit non, molestie sapien." +
+                        " Duis fermentum porttitor leo, eu placerat mi feugiat non.", Arrays.asList("Shoulders", "Chest", "Arms")));
 
         programs.add(new ProgramRow("The best exercises for full body.",
                 "It'll help u to prepare your body for much harder work. " +
-                        "U must to be already strong enough.", Arrays.asList("Legs", "Chest")));
+                        "U must to be already strong enough.", Arrays.asList("Legs")));
 
-        programs.add(new ProgramRow("The best exercises for full body.",
-                "It'll help u to prepare your body for much harder work. " +
-                        "U must to be already strong enough.", Arrays.asList("Legs", "Chest")));
+        programs.add(new ProgramRow("Nam nec tortor sit amet.",
+                "Sed sodales dolor nec lorem consequat elementum. " +
+                        "Nam nec tortor sit amet leo suscipit eleifend. Proin tellus diam, " +
+                        "venenatis nec mattis ac, sodales quis tellus. ", Arrays.asList("Legs", "Chest")));
 
         listView.setAdapter(new ProgramsAdapter(this.getContext(), programs));
 

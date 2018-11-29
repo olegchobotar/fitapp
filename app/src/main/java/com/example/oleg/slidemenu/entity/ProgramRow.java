@@ -6,10 +6,10 @@ import java.util.List;
 public class ProgramRow {
     private String title;
     private String desc;
-    private List<String> tegs;
+    private List<String> tags;
 
     public ProgramRow(){
-        tegs = new ArrayList();
+        tags = new ArrayList();
         title = "Default title";
         desc = "Description of current program";
     }
@@ -17,7 +17,7 @@ public class ProgramRow {
     public ProgramRow(String title, String desc, List tegs) {
         this.title = title;
         this.desc = desc;
-        this.tegs = tegs;
+        this.tags = tegs;
     }
 
     public String getTitle() {
@@ -36,11 +36,11 @@ public class ProgramRow {
         this.desc = desc;
     }
 
-    public List<String> getTegs() {
-        return tegs;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setTegs(ArrayList<String> tegs) {
-        this.tegs = tegs;
+    public void setTags(ArrayList<String> tegs) {
+        this.tags = tegs;
     }
 }

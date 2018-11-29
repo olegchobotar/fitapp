@@ -7,8 +7,9 @@
     <color name="colorPrimaryDark">#248e50</color>
     <color name="colorAccent">#bf40ff</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="grayLight">#fafafa</color>
+    <color name="grayLight">#fcfcfc</color>
     <color name="startBlue">#09c6df</color>
     <color name="endBlue">#3295bf</color>
-    <color name="tegsColor">#767676</color>
+    <color name="tagBg">#cbd8da</color>
+    <color name="tagColor">#919191</color>
 </resources>
