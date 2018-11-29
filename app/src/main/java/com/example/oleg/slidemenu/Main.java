@@ -22,11 +22,6 @@ import android.widget.Toast;
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
 
-    private boolean isOpen = false;
-    private ConstraintSet layout1, layout2;
-    private ConstraintLayout constraintLayout;
-    private ImageView imageViewPhoto;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,36 +43,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             navigationView.setCheckedItem(R.id.nav_programms);
         }
 
-        //Cover image
-
-       /* Window window = getWindow();
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
-        layout1 = new ConstraintSet();
-        layout2 = new ConstraintSet();
-        imageViewPhoto = findViewById(R.id.photo);
-        constraintLayout = findViewById(R.id.constraint_layout);
-        layout2.clone(this, R.layout.profile_expanded);
-        layout1.clone(constraintLayout);
-
-        imageViewPhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                if (!isOpen){
-                    TransitionManager.beginDelayedTransition(constraintLayout);
-                    layout2.applyTo(constraintLayout);
-                    isOpen = !isOpen;
-                }
-
-                else {
-                    TransitionManager.beginDelayedTransition(constraintLayout);
-                    layout1.applyTo(constraintLayout);
-                    isOpen = !isOpen;
-                }
-            }
-        });*/
     }
 
     @Override

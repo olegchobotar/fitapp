@@ -164,7 +164,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
-                            android:background="@color/coloWhite"
+                            android:background="@color/colorWhite"
                             android:text="view Programms"
                             android:textColor="@color/colorAccent" />
 
@@ -174,7 +174,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
-                            android:background="@color/coloWhite"
+                            android:background="@color/colorWhite"
                             android:text="contact"
                             android:textColor="@color/colorPrimaryDark" />
 
