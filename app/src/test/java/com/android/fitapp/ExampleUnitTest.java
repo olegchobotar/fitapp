@@ -1,4 +1,4 @@
-package com.example.oleg.slidemenu;
+package com.android.fitapp;
 
 import org.junit.Test;
 
