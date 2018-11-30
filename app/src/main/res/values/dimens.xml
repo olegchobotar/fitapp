@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="logo_w_h">80dp</dimen>
+
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="drawable_padding">5dp</dimen>
+    <dimen name="app_name_size">42sp</dimen>
+</resources>

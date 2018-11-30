@@ -1,4 +1,4 @@
-package com.example.oleg.slidemenu;
+package com.android.fitapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
