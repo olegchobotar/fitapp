@@ -51,9 +51,6 @@ public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
             tags.addView(teg);
         }
 
-
-        System.out.println();
-
         return view;
     }
 }

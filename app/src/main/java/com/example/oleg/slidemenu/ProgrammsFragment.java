@@ -1,17 +1,19 @@
 package com.example.oleg.slidemenu;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.oleg.slidemenu.adapter.ProgramsAdapter;
 import com.example.oleg.slidemenu.entity.ProgramRow;
+import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,16 +22,25 @@ import java.util.List;
 public class ProgrammsFragment extends Fragment {
     ListView listView;
     List<ProgramRow> programs;
+    String url = "http://192.168.0.102:8080/programs";
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        RestTemplate restTemplate = new RestTemplate();
+
+        restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+
+        ProgramRow program = restTemplate.getForObject(url, ProgramRow.class);
+
         View view = inflater.inflate(R.layout.fragment_programms, container, false);
         listView = view.findViewById(R.id.programs_list);
         programs = new ArrayList<ProgramRow>();
-        programs.add(new ProgramRow("The best exercises for full body.",
-                "It'll help u to prepare your body for much harder work. " +
-                        "U must to be already strong enough.", Arrays.asList("Legs", "Arms")));
+        programs.add(new ProgramRow(program.getTitle(),
+                program.getDesc(), program.getTags()));
         programs.add(new ProgramRow("The best exercises for full body.",
                 "Maecenas finibus quis lacus." +
                         "Maecenas finibus quis lacus sed consectetur. Proin ut mauris a massa varius iaculis. " +
