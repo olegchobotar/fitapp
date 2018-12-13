@@ -34,7 +34,8 @@
                     android:layout_height="150dp"
                     android:layout_centerHorizontal="true"
                     android:elevation="1dp"
-                    android:src="@drawable/cover1" />
+                    android:src="@drawable/photo" />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,6 +158,16 @@
                         android:layout_marginTop="30dp"
                         android:orientation="horizontal"
                         android:weightSum="2">
+                        <Button
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/element_outline"
+                            android:text="view programs"
+                            android:textColor="@color/colorPrimaryDark" />
+
 
                         <Button
                             android:layout_width="125dp"
@@ -164,17 +175,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
-                            android:background="@color/colorWhite"
-                            android:text="view Programms"
-                            android:textColor="@color/colorAccent" />
-
-                        <Button
-                            android:layout_width="125dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:background="@color/colorWhite"
+                            android:background="@drawable/element_outline"
                             android:text="contact"
                             android:textColor="@color/colorPrimaryDark" />
 
