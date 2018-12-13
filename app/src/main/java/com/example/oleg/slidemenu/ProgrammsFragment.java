@@ -11,13 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import com.example.oleg.slidemenu.adapter.ProgramsAdapter;
 import com.example.oleg.slidemenu.entity.ProgramRow;
-import com.google.android.gms.common.api.Response;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ProgrammsFragment extends Fragment {
@@ -42,7 +38,7 @@ public class ProgrammsFragment extends Fragment {
         programs = new ArrayList();
 
         for (ProgramRow pr : response) {
-            programs.add(new ProgramRow(pr.getTitle(),
+            programs.add(new ProgramRow(pr.getId(), pr.getTitle(),
                     pr.getDesc(), pr.getTags()));
         }
 

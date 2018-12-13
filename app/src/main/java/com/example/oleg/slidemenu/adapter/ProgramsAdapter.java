@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.oleg.slidemenu.R;
 import com.example.oleg.slidemenu.entity.ProgramRow;
@@ -28,10 +29,11 @@ public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull final ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.program_row_layout, parent, false);
+
         if (position % 2 == 0) {
             view.setBackgroundResource(R.color.grayLight);
         } else {
@@ -50,6 +52,14 @@ public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
             tag_title.setText(str);
             tags.addView(teg);
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(parent.getContext(), programs.get(position).getTitle(),Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
 
         return view;
     }
