@@ -1,4 +1,4 @@
-package com.android.fitapp.adapter;
+package com.example.oleg.slidemenu.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TableRow;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.android.fitapp.R;
-import com.android.fitapp.entity.ProgramRow;
+import com.example.oleg.slidemenu.entity.ProgramRow;
 
 import java.util.List;
 
@@ -28,10 +28,11 @@ public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull final ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.program_row_layout, parent, false);
+
         if (position % 2 == 0) {
             view.setBackgroundResource(R.color.grayLight);
         } else {
@@ -51,8 +52,13 @@ public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
             tags.addView(teg);
         }
 
-
-        System.out.println();
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(parent.getContext(), programs.get(position).getTitle(),Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
 
         return view;
     }

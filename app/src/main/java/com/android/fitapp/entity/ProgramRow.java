@@ -1,9 +1,15 @@
-package com.android.fitapp.entity;
+package com.example.oleg.slidemenu.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class ProgramRow {
+    private Long id;
     private String title;
     private String desc;
     private List<String> tags;
@@ -12,35 +18,5 @@ public class ProgramRow {
         tags = new ArrayList();
         title = "Default title";
         desc = "Description of current program";
-    }
-
-    public ProgramRow(String title, String desc, List tegs) {
-        this.title = title;
-        this.desc = desc;
-        this.tags = tegs;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(ArrayList<String> tegs) {
-        this.tags = tegs;
     }
 }
