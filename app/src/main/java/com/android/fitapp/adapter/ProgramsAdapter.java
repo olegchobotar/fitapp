@@ -10,8 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.oleg.slidemenu.R;
+import com.android.fitapp.R;
 import com.example.oleg.slidemenu.entity.ProgramRow;
 
 import java.util.List;

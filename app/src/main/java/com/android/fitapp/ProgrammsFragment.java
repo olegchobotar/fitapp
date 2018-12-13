@@ -1,4 +1,4 @@
-package com.example.oleg.slidemenu;
+package com.android.fitapp;
 
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.android.fitapp.R;
 import com.example.oleg.slidemenu.adapter.ProgramsAdapter;
 import com.example.oleg.slidemenu.entity.ProgramRow;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
