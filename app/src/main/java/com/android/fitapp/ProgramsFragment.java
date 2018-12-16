@@ -9,18 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
-import com.android.fitapp.R;
-import com.example.oleg.slidemenu.adapter.ProgramsAdapter;
-import com.example.oleg.slidemenu.entity.ProgramRow;
+import com.android.fitapp.adapter.ProgramsAdapter;
+import com.android.fitapp.entity.ArticleRow;
+import com.android.fitapp.entity.Program;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProgrammsFragment extends Fragment {
+public class ProgramsFragment extends Fragment {
     ListView listView;
-    List<ProgramRow> programs;
+    List<ArticleRow> programs;
     String url = "https://fit-app-by-a1lexen.herokuapp.com";
 
 
@@ -33,17 +32,16 @@ public class ProgrammsFragment extends Fragment {
 
         restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 
-        ProgramRow[] response = restTemplate.getForObject(url+"/programs", ProgramRow[].class);
+        Program[] response = restTemplate.getForObject(url+"/programs", Program[].class);
 
-        View view = inflater.inflate(R.layout.fragment_programms, container, false);
+        View view = inflater.inflate(R.layout.fragment_programs, container, false);
         listView = view.findViewById(R.id.programs_list);
         programs = new ArrayList();
 
-        for (ProgramRow pr : response) {
-            programs.add(new ProgramRow(pr.getId(), pr.getTitle(),
+        for (Program pr : response) {
+            programs.add(new ArticleRow(pr.getId(), pr.getTitle(),
                     pr.getDesc(), pr.getTags()));
         }
-
 
         listView.setAdapter(new ProgramsAdapter(this.getContext(), programs));
 

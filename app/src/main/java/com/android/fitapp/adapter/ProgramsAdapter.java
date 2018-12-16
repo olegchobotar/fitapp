@@ -1,26 +1,31 @@
-package com.example.oleg.slidemenu.adapter;
+package com.android.fitapp.adapter;
+
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.android.fitapp.Main;
+import com.android.fitapp.ArticleFragment;
 import com.android.fitapp.R;
-import com.example.oleg.slidemenu.entity.ProgramRow;
+import com.android.fitapp.entity.ArticleRow;
 
 import java.util.List;
 
-public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
+public class ProgramsAdapter extends ArrayAdapter<ArticleRow> {
 
     private Context context;
-    private List<ProgramRow> programs;
+    private List<ArticleRow> programs;
 
-    public ProgramsAdapter(Context context, List<ProgramRow> programs) {
+    public ProgramsAdapter(Context context, List<ArticleRow> programs) {
         super(context, R.layout.program_row_layout, programs);
         this.context = context;
         this.programs = programs;
@@ -55,8 +60,13 @@ public class ProgramsAdapter extends ArrayAdapter<ProgramRow> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(parent.getContext(), programs.get(position).getTitle(),Toast.LENGTH_SHORT);
-                toast.show();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("program", programs.get(position));
+
+                ArticleFragment fragment = new ArticleFragment();
+                fragment.setArguments(bundle);
+
+                ((Main) context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
             }
         });
 
