@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.android.fitapp.R;
 import com.example.oleg.slidemenu.adapter.ProgramsAdapter;
 import com.example.oleg.slidemenu.entity.ProgramRow;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
@@ -35,7 +34,7 @@ public class ProgrammsFragment extends Fragment {
 
         ProgramRow[] response = restTemplate.getForObject(url+"/programs", ProgramRow[].class);
 
-        View view = inflater.inflate(R.layout.fragment_programms, container, false);
+        View view = inflater.inflate(R.layout.fragment_programs, container, false);
         listView = view.findViewById(R.id.programs_list);
         programs = new ArrayList();
 
