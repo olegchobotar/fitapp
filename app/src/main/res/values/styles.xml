@@ -1,11 +1,40 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!-- Light/Day Mode theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <!-- Customize your theme here. -->
+        <item name="backgroundColor">@color/grayLight</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="cardBg">@color/grayLight</item>
+        <item name="tagBg">@color/tagBg</item>
+        <item name="tagColor">@color/tagColor</item>
+        <item name="textColor">@color/colorText</item>
+        <item name="textHint">@color/colorHint</item>
+        <item name="buttonColor">@color/colorButtonTransparent</item>
+        <item name="profileButton">@color/colorText</item>
+    </style>
+
+    <!-- Night/Dark Mode theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="backgroundColor">#434343</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="cardBg">#7b7878</item>
+        <item name="tagBg">#222222</item>
+        <item name="tagColor">#444444</item>
+        <item name="textColor">#eeeeee</item>
+        <item name="textHint">#cccccc</item>
+        <item name="buttonColor">#cbd8da</item>
+        <item name="profileButton">@color/colorText</item>
+    </style>
+
+    <style name="PreferenceScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">#f4f4</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

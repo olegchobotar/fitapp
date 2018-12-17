@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayLight"
+    android:background="?attr/backgroundColor"
     android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="210dp"
-        android:background="@color/colorPrimary" />
+        android:background="?attr/colorPrimary" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
 
         <LinearLayout
@@ -40,13 +42,27 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
                     android:orientation="vertical">
+
+
+                    <ImageButton
+                        android:id="@+id/profile_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_edit" />
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="85dp"
                         app:cardCornerRadius="10dp"
+                        app:cardBackgroundColor="?attr/cardBg"
                         app:contentPadding="15dp"
                         app:contentPaddingLeft="15dp"
                         app:contentPaddingRight="15dp"
@@ -58,24 +74,30 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/profile_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="60dp"
                                 android:text="Oleg Chobotar"
                                 android:textSize="25sp"
+                                android:textColor="?attr/textColor"
                                 android:textStyle="bold" />
+
                             <TextView
+                                android:id="@+id/profile_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="5dp"
                                 android:text="Top Editor"
-                                android:textColor="#d4da19"
                                 android:textAlignment="center"
+                                android:textColor="#d4da19"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
+
                             <TextView
+                                android:id="@+id/profile_description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -83,15 +105,18 @@
                                 android:text="I love fantastic things, colors and good design"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
+                                android:textColor="?attr/textHint"
                                 android:textStyle="italic" />
 
                             <TextView
+                                android:id="@+id/profile_city"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="10dp"
                                 android:text="Chernivtsi, Ukraine"
                                 android:textSize="18sp"
+                                android:textColor="?textColor"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -113,10 +138,12 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/profile_rating"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:text="9.5"
+                                android:textColor="?attr/textHint"
                                 android:textSize="35sp"
                                 android:textStyle="bold" />
 
@@ -125,6 +152,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:text="rating"
+                                android:textColor="?attr/textHint"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -136,10 +164,12 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/profile_programs"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:text="124"
+                                android:textColor="?attr/textHint"
                                 android:textSize="35sp"
                                 android:textStyle="bold" />
 
@@ -147,7 +177,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="programms"
+                                android:text="programs"
+                                android:textColor="?attr/textHint"
                                 android:textSize="20sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -158,6 +189,7 @@
                         android:layout_marginTop="30dp"
                         android:orientation="horizontal"
                         android:weightSum="2">
+
                         <Button
                             android:layout_width="125dp"
                             android:layout_height="wrap_content"
@@ -166,7 +198,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/element_outline"
                             android:text="view programs"
-                            android:textColor="@color/colorPrimaryDark" />
+                            android:textColor="?attr/profileButton" />
 
 
                         <Button
@@ -177,7 +209,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/element_outline"
                             android:text="contact"
-                            android:textColor="@color/colorPrimaryDark" />
+                            android:textColor="?attr/profileButton" />
 
 
                     </LinearLayout>
