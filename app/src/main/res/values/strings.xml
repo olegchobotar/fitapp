@@ -8,6 +8,18 @@
     <string name="not_logged_in">Not logged in</string>
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="create_program">Create Program</string>
+    <string name="programs">Programs</string>
+    <string name="progress">Progress</string>
+    <string name="journal">Journal</string>
+    <string name="profile">Profile</string>
+    <string name="log_out">Log Out</string>
+    <string name="other">Other</string>
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="exit">Exit</string>
+    <string name="help_feedback">Help &amp; feedback</string>
 
     <!--Registration-->
 
@@ -64,6 +76,15 @@
     <!--Profile-->
     <string name="username">Oleg Chobotar</string>
     <string name="user_email">Olegtchobotary2000@gmail.com</string>
+    <string name="profile_title">Top Editor</string>
+    <string name="profile_description">I love fantastic things, colors and good design</string>
+    <string name="city_country">Chernivtsi, Ukraine</string>
+    <string name="rating_numb">9.5</string>
+    <string name="rating">rating</string>
+    <string name="programs_numb">56</string>
+    <string name="programs_prof">programs</string>
+    <string name="view_programs">View Programs</string>
+    <string name="contact">Contact</string>
     <string name="update">Update</string>
 
     <!--Programs-->

@@ -20,8 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".authentification.LogIn" />
-        <activity android:name=".authentification.SignIn" />
         <activity android:name=".authentification.Registration" />
         <activity android:name=".settings.SettingsActivity"></activity>
     </application>

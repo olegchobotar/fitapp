@@ -15,6 +15,13 @@
         <item name="textHint">@color/colorHint</item>
         <item name="buttonColor">@color/colorButtonTransparent</item>
         <item name="profileButton">@color/colorText</item>
+        <item name="android:windowBackground">@color/grayLight</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="android:textColorSecondary">@color/colorHint</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorPrimary</item>
+        <item name="android:panelColorBackground">@color/colorPrimary</item>
+
+
     </style>
 
     <!-- Night/Dark Mode theme. -->
@@ -31,6 +38,17 @@
         <item name="textHint">#cccccc</item>
         <item name="buttonColor">#cbd8da</item>
         <item name="profileButton">@color/colorText</item>
+        <item name="android:windowBackground">@color/darkBg</item>
+        <item name="android:textColorPrimary">@color/grayLight</item>
+        <item name="android:textColorSecondary">@color/tagColor</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorPrimary</item>
+
+        <item name="textColorAlertDialogListItem">@color/colorPrimary</item>
+
+
+
+
+
     </style>
 
     <style name="PreferenceScreen" parent="Theme.AppCompat.Light.NoActionBar">

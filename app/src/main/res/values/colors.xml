@@ -15,4 +15,6 @@
     <color name="colorHint">#5e5d5d</color>
 
     <color name="colorButtonTransparent">#be050505</color>
+
+    <color name="darkBg">#434343</color>
 </resources>

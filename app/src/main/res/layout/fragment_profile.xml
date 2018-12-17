@@ -79,7 +79,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="60dp"
-                                android:text="Oleg Chobotar"
+                                android:text="@string/username"
                                 android:textSize="25sp"
                                 android:textColor="?attr/textColor"
                                 android:textStyle="bold" />
@@ -90,7 +90,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="5dp"
-                                android:text="Top Editor"
+                                android:text="@string/profile_title"
                                 android:textAlignment="center"
                                 android:textColor="#d4da19"
                                 android:textSize="18sp"
@@ -102,7 +102,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="10dp"
-                                android:text="I love fantastic things, colors and good design"
+                                android:text="@string/profile_description"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:textColor="?attr/textHint"
@@ -114,7 +114,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="10dp"
-                                android:text="Chernivtsi, Ukraine"
+                                android:text="@string/city_country"
                                 android:textSize="18sp"
                                 android:textColor="?textColor"
                                 android:textStyle="bold" />
@@ -142,7 +142,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="9.5"
+                                android:text="@string/rating_numb"
                                 android:textColor="?attr/textHint"
                                 android:textSize="35sp"
                                 android:textStyle="bold" />
@@ -151,7 +151,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="rating"
+                                android:text="@string/rating"
                                 android:textColor="?attr/textHint"
                                 android:textSize="20sp" />
                         </LinearLayout>
@@ -168,7 +168,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="124"
+                                android:text="@string/programs_numb"
                                 android:textColor="?attr/textHint"
                                 android:textSize="35sp"
                                 android:textStyle="bold" />
@@ -177,7 +177,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="programs"
+                                android:text="@string/programs_prof"
                                 android:textColor="?attr/textHint"
                                 android:textSize="20sp" />
                         </LinearLayout>
@@ -197,7 +197,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/element_outline"
-                            android:text="view programs"
+                            android:text="@string/view_programs"
                             android:textColor="?attr/profileButton" />
 
 
@@ -208,7 +208,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/element_outline"
-                            android:text="contact"
+                            android:text="@string/contact"
                             android:textColor="?attr/profileButton" />
 
 
