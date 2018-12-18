@@ -79,7 +79,12 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 restartApp();
                 break;
             case R.id.nav_exit:
-                finishAndRemoveTask();
+/*                Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("EXIT", true);
+                startActivity(intent);
+                finishAndRemoveTask();*/
+                finishAffinity();
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
@@ -122,7 +127,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
-    public void changeTheme(){
+    public void changeTheme() {
         String themeName = readSettings();
         switch (themeName) {
             case "Dark":
@@ -133,6 +138,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
         }
     }
+
     public void restartApp() {
         finish();
         startActivity(getIntent());

@@ -1,10 +1,12 @@
 package com.android.fitapp.settings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -20,8 +22,6 @@ public class SettingsActivity extends Activity {
         changeTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        Toast.makeText(this, themeName, Toast.LENGTH_LONG).show();
-
         if (findViewById(R.id.settings_container) != null) {
             if (savedInstanceState != null) {
                 return;
@@ -29,7 +29,6 @@ public class SettingsActivity extends Activity {
             getFragmentManager().beginTransaction().add(R.id.settings_container, new SettingsFragment()).commit();
 
         }
-
     }
 
     @Override

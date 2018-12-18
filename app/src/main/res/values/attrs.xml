@@ -9,5 +9,8 @@
         <attr name="textHint" format="color"/>
         <attr name="buttonColor" format="color"/>
         <attr name="profileButton" format="color"/>
+        <attr name="profileButtonBg" format="color"/>
+        <attr name="profileButtonBorder" format="color"/>
+        <attr name="profileTitle" format="color"/>
     </declare-styleable>
 </resources>

@@ -92,7 +92,7 @@
                                 android:layout_marginTop="5dp"
                                 android:text="@string/profile_title"
                                 android:textAlignment="center"
-                                android:textColor="#d4da19"
+                                android:textColor="?attr/profileTitle"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -207,10 +207,10 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:fadingEdge="horizontal"
                             android:background="@drawable/element_outline"
                             android:text="@string/contact"
                             android:textColor="?attr/profileButton" />
-
 
                     </LinearLayout>
                 </LinearLayout>

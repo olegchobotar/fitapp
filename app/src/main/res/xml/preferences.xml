@@ -30,7 +30,8 @@
             android:entryValues="@array/theme"
             android:key="pref_theme"
             android:title="@string/pref_theme"
-            android:textColor="?attr/textColor" />
+            android:textColor="?attr/textColor"
+            android:defaultValue="0"/>
 
         <SwitchPreference
             android:defaultValue="true"
