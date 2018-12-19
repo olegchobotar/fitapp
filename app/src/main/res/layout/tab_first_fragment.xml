@@ -89,8 +89,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/title"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="158dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="468dp"
         android:text="Create exercises" />
 
     <Button
@@ -99,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
         android:text="Create" />
 
 </RelativeLayout>
