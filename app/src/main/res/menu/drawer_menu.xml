@@ -6,7 +6,11 @@
         <item
             android:id="@+id/nav_programms"
             android:icon="@drawable/ic_programs"
-            android:title="Programms" />
+            android:title="Programs" />
+        <item
+            android:id="@+id/nav_create_program"
+            android:icon="@drawable/ic_create_program"
+            android:title="Create" />
         <item
             android:id="@+id/nav_progress"
             android:icon="@drawable/ic_progress"

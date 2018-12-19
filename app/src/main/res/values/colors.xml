@@ -3,6 +3,7 @@
     <!--<color name="colorPrimary">#98a0ca</color>-->
     <!--<color name="colorPrimaryDark">#000</color>-->
     <!--<color name="colorAccent">#6bda70</color>-->
+    <color name="disabledTab">#345f60</color>
     <color name="colorPrimary">#00bfbf</color>
     <color name="colorPrimaryDark">#555959</color>
     <color name="colorAccent">#009e9e</color>

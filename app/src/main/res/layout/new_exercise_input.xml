@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="32dp"
+        android:text="Description:" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="-8dp"
+        android:ems="10"
+        android:hint="Exercise name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/reps"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/name"
+        android:ems="5"
+        android:hint="Reps"
+        android:inputType="textPersonName"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/rest"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/reps"
+        android:ems="5"
+        android:hint="Rest"
+        android:inputType="textPersonName"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/edit_border"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:lines="2"
+        android:scrollbars="vertical" />
+
+    <ImageButton
+        android:id="@+id/delete_btn"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@null"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+</RelativeLayout>

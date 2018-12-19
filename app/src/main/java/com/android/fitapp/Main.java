@@ -39,6 +39,9 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.nav_programms:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsFragment()).commit();
                 break;
+            case R.id.nav_create_program:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CreateProgramFragment()).commit();
+                break;
             case R.id.nav_journal:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new JournalFragment()).commit();
                 break;

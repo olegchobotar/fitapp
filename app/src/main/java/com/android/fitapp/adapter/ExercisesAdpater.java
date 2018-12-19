@@ -13,11 +13,11 @@ import com.android.fitapp.entity.Exercise;
 
 import java.util.List;
 
-public class ExercisesApater extends ArrayAdapter<Exercise> {
+public class ExercisesAdpater extends ArrayAdapter<Exercise> {
     Context context;
     List<Exercise> exercises;
 
-    public ExercisesApater(Context context, List<Exercise> exercises) {
+    public ExercisesAdpater(Context context, List<Exercise> exercises) {
         super(context, R.layout.program_exercise_layout, exercises);
         this.context = context;
         this.exercises = exercises;
