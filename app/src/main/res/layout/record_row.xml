@@ -5,12 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/record_bg"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:srcCompat="@color/grayLight" />
-
     <TextView
         android:id="@+id/text8"
         android:layout_width="wrap_content"
@@ -51,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/record_date"
-        android:layout_marginStart="225dp"
+        android:layout_marginStart="227dp"
         android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/text"
         android:text="Left Arm:" />
@@ -71,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/record_date"
-        android:layout_marginStart="225dp"
+        android:layout_marginStart="227dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/text"
         android:text="Left Arm:" />

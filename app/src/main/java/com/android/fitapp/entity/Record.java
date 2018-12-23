@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Record {
-    Date date;
+
+    String date;
     int leftArm;
     int rightArm;
     int waist;

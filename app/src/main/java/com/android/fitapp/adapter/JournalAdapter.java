@@ -28,7 +28,7 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.ViewHold
     List<Record> records;
     Context context;
 
-    public JournalAdapter(ArrayList<Record> records, Context context) {
+    public JournalAdapter(List<Record> records, Context context) {
         this.records = records;
         this.context = context;
     }
@@ -42,10 +42,8 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Record record = records.get(i);
-        if (record != null) {
-            viewHolder.getView().setBackgroundResource(R.color.colorPrimary);
-            /*if (i % 2 == 0) viewHolder.getBackground().setBackgroundResource(R.color.bg_main);
-            else viewHolder.getBackground().setBackgroundResource(R.color.colorWhite);*/
+        if (record != null) { if (i % 2 == 0) viewHolder.getView().setBackgroundResource(R.color.grayLight);
+            else viewHolder.getView().setBackgroundResource(R.color.colorWhite);
 
             double bmi = record.getWeight() / Math.pow(record.getHeight()/100.0, 2);
             viewHolder.getBMI().setText(String.valueOf(String.format("%.2f", bmi)));
@@ -55,7 +53,7 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.ViewHold
             viewHolder.getChest().setText(String.valueOf(record.getChest()));
             viewHolder.getHeight().setText(String.valueOf(record.getHeight()));
             viewHolder.getWeight().setText(String.valueOf(record.getWeight()));
-            viewHolder.getDate().setText(DateFormat.format("dd/MM/yyyy",record.getDate()));
+            viewHolder.getDate().setText(record.getDate());
 
         }
     }
