@@ -43,8 +43,9 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         toggle.syncState();
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_programs);
+
         }
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
     }
@@ -79,11 +80,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 restartApp();
                 break;
             case R.id.nav_exit:
-/*                Intent intent = new Intent(getApplicationContext(), Main.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("EXIT", true);
-                startActivity(intent);
-                finishAndRemoveTask();*/
                 finishAffinity();
                 break;
             case R.id.nav_share:
