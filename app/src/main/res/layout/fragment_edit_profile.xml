@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context="profile.EditProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="123dp">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/app_name_size" />
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_name"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/full_name"
+            android:nextFocusDown="@id/edit_text_title"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint" />
+
+
+        <EditText
+            android:id="@+id/edit_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_title"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/title"
+            android:nextFocusDown="@id/edit_text_email"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint" />
+
+        <EditText
+            android:id="@+id/edit_text_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_country"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/country"
+            android:inputType="text"
+            android:nextFocusDown="@id/edit_text_city"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
+
+        <EditText
+            android:id="@+id/edit_text_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_city"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/city"
+            android:inputType="text"
+            android:nextFocusDown="@id/edit_text_description"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
+
+        <EditText
+            android:id="@+id/edit_text_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_description"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/description"
+            android:inputType="textMultiLine"
+            android:lines="6"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
+
+        <EditText
+            android:id="@+id/edit_text_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/phone"
+            android:inputType="number"
+            android:maxLength="10"
+            android:nextFocusDown="@id/button_register"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
+
+        <Button
+            android:id="@+id/button_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/buttonColor"
+            android:text="@string/update"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorPrimary" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

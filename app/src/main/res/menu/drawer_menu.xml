@@ -2,44 +2,59 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <group android:checkableBehavior="single" >
+    <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_programms"
+            android:id="@+id/nav_add_programs"
+            android:icon="@drawable/ic_add"
+            android:title="@string/create_program"
+            android:textColor="?attr/textColor"/>
+        <item
+            android:id="@+id/nav_programs"
             android:icon="@drawable/ic_programs"
-            android:title="Programs" />
-        <item
-            android:id="@+id/nav_create_program"
-            android:icon="@drawable/ic_create_program"
-            android:title="Create" />
+            android:title="@string/programs"
+            android:textColor="?attr/textColor"/>
         <item
             android:id="@+id/nav_progress"
             android:icon="@drawable/ic_progress"
-            android:title="Progress" />
+            android:title="@string/progress"
+            android:textColor="?attr/textColor"/>
         <item
             android:id="@+id/nav_journal"
             android:icon="@drawable/ic_journal"
-            android:title="Journal" />
+            android:title="@string/journal" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
-            android:title="Profile" />
+            android:title="@string/profile" />
 
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_settings"
-            android:title="Settings" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/other">
         <menu>
+            <item
+                android:id="@+id/nav_log_out"
+                android:icon="@drawable/ic_log_out"
+                android:title="@string/log_out" />
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/settings" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_share"
-                android:title="Share" />
+                android:title="@string/share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_send"
-                android:title="Send" />
+                android:title="@string/send" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="@string/exit" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_help"
+                android:title="@string/help_feedback" />
         </menu>
     </item>
 

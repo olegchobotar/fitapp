@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="cardBg" format="color"/>
+        <attr name="tagBg" format="color"/>
+        <attr name="tagColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textHint" format="color"/>
+        <attr name="buttonColor" format="color"/>
+        <attr name="profileButton" format="color"/>
+        <attr name="profileButtonBg" format="color"/>
+        <attr name="profileButtonBorder" format="color"/>
+        <attr name="profileTitle" format="color"/>
+    </declare-styleable>
+</resources>

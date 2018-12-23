@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/title"
@@ -15,18 +16,21 @@
         android:text="Title of program"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/desc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:textColor="?attr/textColor"/>
     <TextView
         android:id="@+id/desc"
         android:layout_width="0dp"
         android:layout_height="43dp"
+        android:layout_below="@+id/title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:text="Description of program"
+        android:textColor="?attr/textHint"
         android:layout_marginBottom="12dp"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
-        android:text="Description of program"
         app:layout_constraintBottom_toTopOf="@+id/tags"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

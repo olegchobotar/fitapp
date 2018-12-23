@@ -10,9 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:background="@drawable/tag_bg"
-        android:paddingLeft="3dp"
-        android:paddingRight="3dp"
+        android:textColor="?attr/tagColor"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:text="TextView"
-        android:textColor="@color/tagColor"
-        android:textSize="18sp" />/>
+        android:textSize="18sp"/>
 </RelativeLayout>
