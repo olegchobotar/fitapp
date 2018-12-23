@@ -1,19 +1,24 @@
 package com.android.fitapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.Loader;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.fitapp.profile.ProfileFragment;
@@ -25,8 +30,10 @@ import com.android.fitapp.programs.ProgramsFragment;
 import com.android.fitapp.settings.SettingsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    public static Context contextOfApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +54,15 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             navigationView.setCheckedItem(R.id.nav_programs);
 
         }
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        contextOfApplication = getApplicationContext();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        changeLoginStatus();
+
     }
 
     @Override
@@ -67,17 +82,15 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
                 break;
             case R.id.nav_progress:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgressFragment()).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ProgressFragment()).commit();
                 break;
             case R.id.nav_settings:
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
             case R.id.nav_log_out:
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
                 changeLoginStatus();
-                restartApp();
                 break;
             case R.id.nav_exit:
                 finishAffinity();
@@ -109,6 +122,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     public void onBackPressed() {
+        changeLoginStatus();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -133,11 +147,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 setTheme(R.style.AppTheme);
                 break;
         }
-    }
-
-    public void restartApp() {
-        finish();
-        startActivity(getIntent());
     }
 
 }

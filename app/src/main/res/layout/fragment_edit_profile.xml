@@ -32,22 +32,21 @@
             android:drawableLeft="@drawable/ic_name"
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/full_name"
-            android:nextFocusDown="@id/edit_text_email"
+            android:nextFocusDown="@id/edit_text_title"
             android:textColor="?attr/textColor"
             android:textColorHint="?attr/textHint" />
 
 
         <EditText
-            android:id="@+id/edit_text_email"
+            android:id="@+id/edit_text_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_email"
+            android:drawableLeft="@drawable/ic_title"
             android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:nextFocusDown="@id/edit_text_country"
+            android:hint="@string/title"
+            android:nextFocusDown="@id/edit_text_email"
             android:textColor="?attr/textColor"
-            android:textColorHint="?attr/textHint"  />
+            android:textColorHint="?attr/textHint" />
 
         <EditText
             android:id="@+id/edit_text_country"
@@ -70,17 +69,6 @@
             android:hint="@string/city"
             android:inputType="text"
             android:nextFocusDown="@id/edit_text_description"
-            android:textColor="?attr/textColor"
-            android:textColorHint="?attr/textHint"  />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_password"
-            android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/password"
-            android:inputType="text"
-            android:nextFocusDown="@id/edit_text_phone"
             android:textColor="?attr/textColor"
             android:textColorHint="?attr/textHint"  />
 

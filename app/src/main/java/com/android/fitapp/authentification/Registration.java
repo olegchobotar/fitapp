@@ -1,5 +1,6 @@
 package com.android.fitapp.authentification;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +16,18 @@ import android.widget.Toast;
 import com.android.fitapp.Main;
 import com.android.fitapp.R;
 import com.android.fitapp.entity.User;
+import com.android.fitapp.profile.EditProfile;
+import com.android.fitapp.profile.ProfileFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Registration extends Fragment {
 
@@ -35,6 +42,7 @@ public class Registration extends Fragment {
 
     private FirebaseAuth mAuth;
 
+    private FirebaseDatabase firebaseDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +58,7 @@ public class Registration extends Fragment {
         progressBar.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
         view.findViewById(R.id.button_register).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,27 +72,10 @@ public class Registration extends Fragment {
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-    }
-/*
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if (mAuth.getCurrentUser() != null){
-            //handle the already login user
-
-        }
-
-    }*/
 
     private void registerUser() {
         final String name = editTextName.getText().toString().trim();
+        final String nickname = editTextName.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
         final String country = editTextCountry.getText().toString().trim();
         final String city = editTextCity.getText().toString().trim();
@@ -91,6 +83,11 @@ public class Registration extends Fragment {
         final String phone = editTextPhone.getText().toString().trim();
 
         if (name.isEmpty()) {
+            editTextName.setError(getString(R.string.input_error_name));
+            editTextName.requestFocus();
+            return;
+        }
+        if (nickname.isEmpty()) {
             editTextName.setError(getString(R.string.input_error_name));
             editTextName.requestFocus();
             return;
@@ -144,8 +141,8 @@ public class Registration extends Fragment {
             return;
         }
 
-
         progressBar.setVisibility(View.VISIBLE);
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -169,6 +166,10 @@ public class Registration extends Fragment {
                                     progressBar.setVisibility(View.GONE);
                                     if (task.isSuccessful()) {
                                         Toast.makeText(getActivity(), getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                        ProfileFragment fragment = new ProfileFragment();
+                                        getActivity().getSupportFragmentManager().beginTransaction()
+                                                .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+                                        ((Main)getActivity()).changeLoginStatus();
                                     } else {
                                         //display a failure message
                                     }
@@ -183,12 +184,4 @@ public class Registration extends Fragment {
 
     }
 
-   /* @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_register:
-                registerUser();
-                break;
-        }
-    }*/
 }
