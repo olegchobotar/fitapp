@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/backgroundColor">
+    <!--/ali.UI.Customize.PreferenceCategory android:title="@string/pref_auto_login">-->
+
+    <PreferenceCategory
+        android:key="pref_profile"
+        android:title="@string/pref_header_profile">
+        <EditTextPreference
+            android:inputType="textCapWords"
+            android:key="key_сhange_password"
+            android:title="@string/change_password"
+            android:textColor="?attr/textColor"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_auto_login"
+            android:title="@string/pref_auto_login"
+            android:textColor="?attr/textColor"/>
+
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_application"
+        android:title="@string/pref_header_app">
+
+
+        <ListPreference
+            android:entries="@array/theme"
+            android:entryValues="@array/theme"
+            android:key="pref_theme"
+            android:title="@string/pref_theme"
+            android:textColor="?attr/textColor"
+            android:defaultValue="0"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_notifications"
+            android:title="@string/pref_notifications"
+            android:textColor="?attr/textColor"/>
+    </PreferenceCategory>
+</PreferenceScreen>

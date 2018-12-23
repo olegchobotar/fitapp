@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDarkBackground"
+    android:background="?attr/backgroundColor"
     tools:context=".authentification.Registration">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:fontFamily="cursive"
             android:text="@string/app_name"
             android:textAlignment="center"
-            android:textColor="@color/colorText"
+            android:textColor="?attr/textColor"
             android:textSize="@dimen/app_name_size" />
 
         <EditText
@@ -34,8 +34,8 @@
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/full_name"
             android:nextFocusDown="@id/edit_text_email"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint" />
 
 
         <EditText
@@ -47,8 +47,8 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:nextFocusDown="@id/edit_text_country"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint" />
 
         <EditText
             android:id="@+id/edit_text_country"
@@ -59,8 +59,8 @@
             android:hint="@string/country"
             android:inputType="text"
             android:nextFocusDown="@id/edit_text_city"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
 
         <EditText
             android:id="@+id/edit_text_city"
@@ -71,8 +71,8 @@
             android:hint="@string/city"
             android:inputType="text"
             android:nextFocusDown="@id/edit_text_password"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
 
         <EditText
             android:id="@+id/edit_text_password"
@@ -83,8 +83,8 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:nextFocusDown="@id/edit_text_phone"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint" />
 
 
         <EditText
@@ -98,17 +98,17 @@
             android:inputType="number"
             android:maxLength="10"
             android:nextFocusDown="@id/button_register"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textHint"  />
 
         <Button
             android:id="@+id/button_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_button_register"
+            android:background="?attr/buttonColor"
             android:text="@string/register"
             android:textAllCaps="false"
-            android:textColor="@color/colorText" />
+            android:textColor="?attr/colorPrimary" />
 
     </LinearLayout>
 

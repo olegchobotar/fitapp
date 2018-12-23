@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimary">#98a0ca</color>-->
-    <!--<color name="colorPrimaryDark">#000</color>-->
-    <!--<color name="colorAccent">#6bda70</color>-->
-    <color name="colorPrimary">#00bfbf</color>
-    <color name="colorPrimaryDark">#555959</color>
-    <color name="colorAccent">#009e9e</color>
-    <color name="colorWhite">#ffffff</color>
+    <!--Light Theme-->
+    <color name="backgroundLight">#fcfcfc</color>
+    <color name="colorPrimaryLight">#00bfbf</color>
+    <color name="colorPrimaryDarkLight">#555959</color>
+    <color name="colorAccentLight">#009e9e</color>
+    <color name="cardBgLight">#fafafa</color>
+    <color name="tagBgLight">#cbd8da</color>
+    <color name="tagColorLight">#919191</color>
+    <color name="textColorLight">#3e3e3e</color>
+    <color name="textHintLight">#5e5d5d</color>
+    <color name="buttonColorLight">#be050505</color>
+    <color name="profileButtonColorLight">#be050505</color>
+    <color name="profileButtonBgLight">#fafafa</color>
+    <color name="profileButtonBorderLight">#00bfbf</color>
+    <color name="profileTitleColorLight">#d4da19</color>
+
+    <!--Dark Theme-->
+    <color name="backgroundDark">#434343</color>
+    <color name="colorPrimaryDark">#009e9e</color>
+    <color name="colorPrimaryDarkDark">#555959</color>
+    <color name="colorAccentDark">#009e9e</color>
+    <color name="cardBgDark">#707070</color>
+    <color name="tagBgDark">#222222</color>
+    <color name="tagColorDark">#444444</color>
+    <color name="textColorDark">#eeeeee</color>
+    <color name="textHintDark">#cccccc</color>
+    <color name="buttonColorDark">#be050505</color>
+    <color name="profileButtonColorDark">#cbd8da</color>
+    <color name="profileButtonBgDark">#707070</color>
+    <color name="profileButtonBorderDark">#707070</color>
+    <color name="profileTitleColorDark">#d4da19</color>
+
+
+
     <color name="grayLight">#fcfcfc</color>
-    <color name="startBlue">#09c6df</color>
-    <color name="endBlue">#3295bf</color>
-    <color name="tagBg">#cbd8da</color>
-    <color name="tagColor">#919191</color>
-    <color name="colorDarkBackground">#343434</color>
+    <color name="colorWhite">#ffffff</color>
 
-
-    <color name="bg_login">#26ae90</color>
-    <color name="bg_register">#2e3237</color>
-    <color name="bg_main">#428bca</color>
-    <color name="white">#ffffff</color>
-    <color name="input_login">#222222</color>
-    <color name="input_login_hint">#999999</color>
-    <color name="input_register">#888888</color>
-    <color name="input_register_bg">#3b4148</color>
-    <color name="input_register_hint">#5e6266</color>
-    <color name="btn_login">#26ae90</color>
-    <color name="btn_login_bg">#eceef1</color>
-    <color name="lbl_name">#333333</color>
-    <color name="btn_logut_bg">#ff6861</color>
-
-    <color name="colorText">#dddddd</color>
-    <color name="colorHint">#959595</color>
-    <color name="colorButtonTransparent">#be050505</color>
 </resources>

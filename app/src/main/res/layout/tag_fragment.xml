@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:background="@drawable/tag_bg"
-        android:textColor="@color/tagColor"
+        android:textColor="?attr/tabBackground"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:text="TextView"

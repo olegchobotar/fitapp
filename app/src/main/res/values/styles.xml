@@ -1,12 +1,82 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!-- Light/Day Mode theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundColor">@color/backgroundLight</item>
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>
+        <item name="colorAccent">@color/colorAccentLight</item>
+        <item name="cardBg">@color/cardBgLight</item>
+        <item name="tagBg">@color/tagBgLight</item>
+        <item name="tagColor">@color/tagColorLight</item>
+        <item name="textColor">@color/textColorLight</item>
+        <item name="textHint">@color/textHintLight</item>
+        <item name="buttonColor">@color/buttonColorLight</item>
+        <item name="profileTitle">@color/profileTitleColorLight</item>
+        <item name="profileButton">@color/profileButtonColorLight</item>
+        <item name="profileButtonBg">@color/profileButtonBgLight</item>
+        <item name="profileButtonBorder">@color/profileButtonBorderLight</item>
+        <item name="android:windowBackground">@color/backgroundLight</item>
+        <item name="android:textColorPrimary">@color/textColorLight</item>
+        <item name="android:textColorSecondary">@color/textHintLight</item>
+
+
     </style>
+
+    <!-- Night/Dark Mode theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="backgroundColor">@color/backgroundDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
+        <item name="colorAccent">@color/colorAccentDark</item>
+        <item name="cardBg">@color/cardBgDark</item>
+        <item name="tagBg">@color/tagBgDark</item>
+        <item name="tagColor">@color/tagColorDark</item>
+        <item name="textColor">@color/textColorDark</item>
+        <item name="textHint">@color/textHintDark</item>
+        <item name="buttonColor">@color/buttonColorDark</item>
+        <item name="profileButton">@color/profileButtonColorDark</item>
+        <item name="profileButtonBg">@color/profileButtonBgDark</item>
+        <item name="profileButtonBorder">@color/profileButtonBorderDark</item>
+        <item name="profileTitle">@color/profileTitleColorDark</item>
+        <item name="android:windowBackground">@color/backgroundDark</item>
+        <item name="android:textColorPrimary">@color/textColorDark</item>
+        <item name="android:textColorSecondary">@color/textHintDark</item>
+        <!--<item name="android:textColorAlertDialogListItem">@color/colorPrimary</item>-->
+        <!-- AppCompat Dialog Attributes -->
+        <!--<item name="android:dialogTheme">@style/AppCompatDialogDark</item>-->
+        <item name="android:alertDialogTheme">@style/AppCompatAlertDark</item>
+
+=
+    </style>
+    <!-- Generic Dialog Theme -->
+    <style name="AppCompatDialogDark" parent="Theme.AppCompat.Dialog">
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/grayLight</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/backgroundDark</item>
+        <!-- Used for the buttons -->
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
+    </style>
+
+    <!-- Alert Dialog Theme -->
+    <style name="AppCompatAlertDark" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/grayLight</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/backgroundDark</item>
+        <!-- Used for the buttons -->
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
+    </style>
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
