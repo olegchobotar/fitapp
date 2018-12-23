@@ -1,9 +1,11 @@
 package com.android.fitapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +18,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.android.fitapp.entity.User;
 import com.android.fitapp.profile.ProfileFragment;
 import com.android.fitapp.navHeader.NavHeaderAuthorized;
 import com.android.fitapp.navHeader.NavHeaderNotAuthorized;
@@ -24,9 +27,16 @@ import com.android.fitapp.programs.ProgramsFragment;
 
 import com.android.fitapp.settings.SettingsActivity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    public static Context contextOfApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +53,19 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         toggle.syncState();
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new JournalFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_programs);
         }
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        //PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        contextOfApplication = getApplicationContext();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        changeLoginStatus();
+
     }
 
     @Override
@@ -66,7 +85,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
                 break;
             case R.id.nav_progress:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgressFragment()).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ProgressFragment()).commit();
                 break;
             case R.id.nav_settings:
                 //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
@@ -76,14 +95,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
                 changeLoginStatus();
-                restartApp();
                 break;
             case R.id.nav_exit:
-/*                Intent intent = new Intent(getApplicationContext(), Main.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("EXIT", true);
-                startActivity(intent);
-                finishAndRemoveTask();*/
                 finishAffinity();
                 break;
             case R.id.nav_share:
@@ -96,7 +109,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    public static Context getContextOfApplication()
+    {
+        return contextOfApplication;
+    }
     public void changeLoginStatus() {
 
         Fragment fragment = null;
@@ -143,5 +159,44 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         finish();
         startActivity(getIntent());
     }
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private Context context;
+    private void setupFirebaseAuth(){
+        mAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
 
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if (user != null) {
+                    // User is signed in
+                } else {
+                    // User is signed out
+                }
+            }
+        };
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange( DataSnapshot dataSnapshot) {
+                User user = new User();
+                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                    if (ds.getKey().equals(context.getString(R.string.users) )){
+                        System.out.println(user.getEmail());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }

@@ -13,26 +13,33 @@ public class User {
     private String country;
     private String city;
     private String phone;
-    private float rating;
-    private int countOfPrograms;
+    private String photoUrl;
+    private String rating;
+    private String countOfPrograms;
 
     public User() {
         name = "Username";
-        title = "Strong man";
+        title = "There is a title";
         description = "Your description";
         email = "username@gmail.com";
         country = "Country";
         city = "City";
         phone = "ххх ххх хххх";
-        rating = 5f;
-        countOfPrograms = 0;
+        photoUrl = "";
+        rating = "5";
+        countOfPrograms = "0";
     }
 
     public User(String name, String email, String country, String city, String phone) {
         this.name = name;
+        this.title = "There is a title";
+        this.description = "Your description";
         this.email = email;
         this.country = country;
         this.city = city;
         this.phone = phone;
+        this.photoUrl = "";
+        this.rating = "5";
+        this.countOfPrograms = "0";
     }
 }

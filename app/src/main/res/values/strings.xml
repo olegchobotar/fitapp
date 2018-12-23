@@ -74,7 +74,7 @@
 
 
     <!--Profile-->
-    <string name="username">Oleg Chobotar</string>
+    <string name="username">Full Name</string>
     <string name="user_email">Olegtchobotary2000@gmail.com</string>
     <string name="profile_title">Top Editor</string>
     <string name="profile_description">I love fantastic things, colors and good design</string>
@@ -106,6 +106,8 @@
     <string name="pref_auto_login">Auto Login</string>
     <string name="pref_theme">Theme</string>
     <string name="pref_notifications">Notifications</string>
+
+    <string name="users">Users</string>
 
 
 </resources>
