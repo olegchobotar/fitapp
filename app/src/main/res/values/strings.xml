@@ -38,7 +38,7 @@
     <string name="input_error_phone">Phone required</string>
     <string name="input_error_password_length">Password should be at least 6 characters long</string>
     <string name="input_error_phone_invalid">Enter a valid phone number</string>
-    <string name="registration_success">Registered Successfully</string>
+    <string name="registration_success">Registered Successfully. Please check your mailbox and verify</string>
     <string name="input_error_email_invalid">Enter a valid email</string>
 
     <string name="action_sign_in_short">Register</string>

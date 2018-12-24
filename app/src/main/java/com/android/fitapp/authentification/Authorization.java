@@ -102,12 +102,18 @@ public class Authorization extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
-                            Toast.makeText(getActivity(), "Sign In Status: success", Toast.LENGTH_SHORT).show();
-                            ((Main)getActivity()).changeLoginStatus();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            ProfileFragment fragment = new ProfileFragment();
-                            getActivity().getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+                            if (user.isEmailVerified()){
+                                Toast.makeText(getActivity(), "Sign In Status: success", Toast.LENGTH_SHORT).show();
+                                ((Main)getActivity()).changeLoginStatus();
+                                ProfileFragment fragment = new ProfileFragment();
+                                getActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+                            }else {
+                                Toast.makeText(getActivity(), "Please check your mailbox and verify your email", Toast.LENGTH_LONG).show();
+                                mAuth.signOut();
+                            }
+
 
                         } else {
                             Toast.makeText(getActivity(), getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
