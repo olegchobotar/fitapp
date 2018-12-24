@@ -29,7 +29,7 @@
     <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <!-- Customize your theme here. -->
         <item name="backgroundColor">@color/backgroundDark</item>
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDarkDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
         <item name="colorAccent">@color/colorAccentDark</item>
         <item name="cardBg">@color/cardBgDark</item>
@@ -59,9 +59,9 @@
         <!-- Used for the background -->
         <item name="android:background">@color/backgroundDark</item>
         <!-- Used for the buttons -->
-        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDarkDark</item>
 
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDarkDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
     </style>
 
@@ -71,9 +71,9 @@
         <!-- Used for the background -->
         <item name="android:background">@color/backgroundDark</item>
         <!-- Used for the buttons -->
-        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDarkDark</item>
 
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDarkDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
     </style>
 

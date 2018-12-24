@@ -54,7 +54,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:999957144116:android:8c23b660289566d7",
         "android_client_info": {
-          "package_name": "com.example.oleg.slidemenu"
+          "package_name": "com.android.fitapp"
         }
       },
       "oauth_client": [
@@ -62,7 +62,7 @@
           "client_id": "999957144116-0a55kkvcvk4k9sav745i9196604u158l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.oleg.slidemenu",
+            "package_name": "com.android.fitapp",
             "certificate_hash": "3c67c766cdb341f9ff3b921140da366dd7d5dc6d"
           }
         },

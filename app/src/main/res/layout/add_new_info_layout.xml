@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/send_record_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:text="Add info" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chest_info"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="213dp"
+        android:layout_marginTop="125dp"
+        android:text="Weight:" />
+
+    <EditText
+        android:id="@+id/weight_info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="186dp"
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/height_info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="186dp"
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chest_info"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="125dp"
+        android:text="Height:" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chest_info"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="213dp"
+        android:layout_marginTop="63dp"
+        android:text="Right arm:" />
+
+    <EditText
+        android:id="@+id/right_arm_info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/left_arm_info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chest_info"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="63dp"
+        android:text="Left arm:" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chest_info"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="0dp"
+
+        android:text="Waist:" />
+
+    <EditText
+        android:id="@+id/waist_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="61dp"
+        android:digits="0123456789,"
+        android:inputType="number"
+        android:background="@drawable/edit_border" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Chest:"
+        />
+
+    <EditText
+        android:id="@+id/chest_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
+</RelativeLayout>

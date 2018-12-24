@@ -13,7 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.fitapp.adapter.ExercisesApater;
+import com.android.fitapp.adapter.ExercisesAdpater;
 import com.android.fitapp.entity.ArticleRow;
 import com.android.fitapp.entity.Exercise;
 import com.android.fitapp.entity.Program;
@@ -59,7 +59,7 @@ public class ArticleFragment extends Fragment {
             List<Exercise> exercises = new ArrayList<>();
             exercises.addAll(program.getExercises());
 
-            listView.setAdapter(new ExercisesApater(getContext(), exercises));
+            listView.setAdapter(new ExercisesAdpater(getContext(), exercises));
             toast.setText("It's a program");
         } else {
             view = inflater.inflate(R.layout.article_fragment, container, false);

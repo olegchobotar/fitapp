@@ -10,21 +10,19 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.Loader;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
+import com.android.fitapp.journal.JournalFragment;
 import com.android.fitapp.profile.ProfileFragment;
 import com.android.fitapp.navHeader.NavHeaderAuthorized;
 import com.android.fitapp.navHeader.NavHeaderNotAuthorized;
-import com.android.fitapp.programs.ProgramsConstructor;
+import com.android.fitapp.programs.CreateProgramFragment;
 import com.android.fitapp.programs.ProgramsFragment;
 
 import com.android.fitapp.settings.SettingsActivity;
@@ -70,7 +68,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         changeLoginStatus();
         switch (menuItem.getItemId()) {
             case R.id.nav_add_programs:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsConstructor()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CreateProgramFragment()).commit();
                 break;
             case R.id.nav_programs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsFragment()).commit();
@@ -91,6 +89,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
                 changeLoginStatus();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsFragment()).commit();
                 break;
             case R.id.nav_exit:
                 finishAffinity();
