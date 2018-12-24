@@ -15,6 +15,9 @@ import com.android.fitapp.R;
 
 public class SettingsActivity extends Activity {
     public static final String PREF_THEME = "pref_theme";
+    public static final String PREF_AUTOLOGIN = "pref_auto_login";
+    public static final String PREF_CHANGE_EMAIL = "pref_сhange_email";
+    public static final String PREF_CHANGE_PASSWORD = "pref_change_password";
     private String themeName;
 
     @Override

@@ -165,13 +165,15 @@ public class Registration extends Fragment {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     progressBar.setVisibility(View.GONE);
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-                                        ProfileFragment fragment = new ProfileFragment();
+                                        sendVerificationEmail();
+                                        Toast.makeText(getActivity(),  getString(R.string.registration_success), Toast.LENGTH_LONG).show();
+                                        mAuth.signOut();
+                                        Authorization fragment = new Authorization();
                                         getActivity().getSupportFragmentManager().beginTransaction()
                                                 .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
                                         ((Main)getActivity()).changeLoginStatus();
                                     } else {
-                                        //display a failure message
+                                        Toast.makeText(getActivity(),  task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
@@ -182,6 +184,23 @@ public class Registration extends Fragment {
                     }
                 });
 
+    }
+
+    private void sendVerificationEmail(){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (firebaseUser != null){
+            firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+
+                    }else {
+                        Toast.makeText(getActivity(), "Couldn`t send verification email", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
     }
 
 }

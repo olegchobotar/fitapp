@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,7 @@ public class ProfileFragment extends Fragment {
     private TextView ratingView;
     private TextView programsView;
     private ImageView userImage;
+    private ProgressBar progressBar;
 
     private String uid;
     private Uri profImageURI = null;
@@ -81,6 +83,8 @@ public class ProfileFragment extends Fragment {
         ratingView = view.findViewById(R.id.profile_rating);
         programsView = view.findViewById(R.id.profile_programs);
         userImage = view.findViewById(R.id.profile_image);
+        progressBar = view.findViewById(R.id.profile_progress_bar);
+        progressBar.setVisibility(View.GONE);
 
         editProfile = view.findViewById(R.id.profile_edit);
         mAuth = FirebaseAuth.getInstance();
@@ -140,8 +144,8 @@ public class ProfileFragment extends Fragment {
 
     private void changePhoto(){
         if (profImageURI != null){
+            progressBar.setVisibility(View.VISIBLE);
             StorageReference imagePath = storageReference.child("users").child(uid);
-
             imagePath.putFile(profImageURI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -149,6 +153,7 @@ public class ProfileFragment extends Fragment {
                     databaseReference.child("Users").child(uid).child("photoUrl").setValue(imageUri) .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
+                            progressBar.setVisibility(View.GONE);
                             if (task.isSuccessful()) {
                                 Toast.makeText(getActivity(), "New photo was uploaded", Toast.LENGTH_LONG).show();
                             } else
