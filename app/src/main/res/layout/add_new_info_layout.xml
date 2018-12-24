@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/send_record_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -18,37 +18,41 @@
         android:id="@+id/textView61"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/chest_info"
         android:layout_alignParentStart="true"
         android:layout_marginStart="213dp"
         android:layout_marginTop="125dp"
         android:text="Weight:" />
 
-    <TextView
-        android:id="@+id/textView62"
+    <EditText
+        android:id="@+id/weight_info"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView29"
         android:layout_alignParentStart="true"
         android:layout_marginStart="211dp"
         android:layout_marginTop="186dp"
-        android:background="@drawable/edit_border" />
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
 
-    <TextView
-        android:id="@+id/textView63"
+    <EditText
+        android:id="@+id/height_info"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView29"
         android:layout_alignParentStart="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="186dp"
-        android:background="@drawable/edit_border" />
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView64"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/chest_info"
         android:layout_alignParentStart="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="125dp"
@@ -58,37 +62,41 @@
         android:id="@+id/textView55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/chest_info"
         android:layout_alignParentStart="true"
         android:layout_marginStart="213dp"
         android:layout_marginTop="63dp"
         android:text="Right arm:" />
 
-    <TextView
-        android:id="@+id/textView56"
+    <EditText
+        android:id="@+id/right_arm_info"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView29"
         android:layout_alignParentStart="true"
         android:layout_marginStart="210dp"
         android:layout_marginTop="124dp"
-        android:background="@drawable/edit_border" />
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
 
-    <TextView
-        android:id="@+id/textView40"
+    <EditText
+        android:id="@+id/left_arm_info"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView29"
         android:layout_alignParentStart="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="124dp"
-        android:background="@drawable/edit_border" />
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView41"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/chest_info"
         android:layout_alignParentStart="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="63dp"
@@ -98,20 +106,23 @@
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView30"
+        android:layout_below="@+id/chest_info"
         android:layout_alignParentStart="true"
         android:layout_marginStart="7dp"
         android:layout_marginTop="0dp"
+
         android:text="Waist:" />
 
-    <TextView
-        android:id="@+id/textView32"
+    <EditText
+        android:id="@+id/waist_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView29"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="61dp"
+        android:digits="0123456789,"
+        android:inputType="number"
         android:background="@drawable/edit_border" />
 
     <TextView
@@ -119,14 +130,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:text="Chest:" />
+        android:text="Chest:"
+        />
 
-    <TextView
-        android:id="@+id/textView30"
+    <EditText
+        android:id="@+id/chest_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView29"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
-        android:background="@drawable/edit_border" />
+        android:background="@drawable/edit_border"
+        android:digits="0123456789,"
+        android:inputType="number" />
 </RelativeLayout>

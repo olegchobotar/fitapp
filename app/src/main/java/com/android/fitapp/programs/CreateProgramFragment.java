@@ -1,4 +1,4 @@
-package com.android.fitapp;
+package com.android.fitapp.programs;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,8 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.android.fitapp.FirstTabFragment;
+import com.android.fitapp.R;
+import com.android.fitapp.SecondTabFragment;
 import com.android.fitapp.adapter.TabAdapter;
+import com.android.fitapp.authentification.Authorization;
 import com.android.fitapp.elements.CustomViewPager;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CreateProgramFragment extends Fragment {
     View view;
@@ -23,6 +28,12 @@ public class CreateProgramFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null){
+            Authorization fragment = new Authorization();
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+        }
+
         view = inflater.inflate(R.layout.program_constructor_layout, container, false);
 
         viewPager = view.findViewById(R.id.viewPager);

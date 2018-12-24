@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Record {
-
+    Long id;
     String date;
-    int leftArm;
-    int rightArm;
-    int waist;
-    int chest;
-    int BMI;
-    int height;
-    int weight;
+    double leftArm;
+    double rightArm;
+    double waist;
+    double chest;
+    double bmi;
+    double height;
+    double weight;
+    String uid;
 }
