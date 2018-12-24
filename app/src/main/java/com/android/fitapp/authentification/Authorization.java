@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -30,6 +31,9 @@ public class Authorization extends Fragment {
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
+    private Button btnResetPassword;
+    private Button btnSignUp;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,6 +41,8 @@ public class Authorization extends Fragment {
 
         editTextEmail = view.findViewById(R.id.auth_edit_text_email);
         editTextPassword = (EditText) view.findViewById(R.id.auth_edit_text_password);
+        btnResetPassword = view.findViewById(R.id.btn_reset_password);
+        btnSignUp = view.findViewById(R.id.btn_signup);
 
         progressBar = view.findViewById(R.id.auth_progress_bar);
         progressBar.setVisibility(View.GONE);
@@ -49,6 +55,24 @@ public class Authorization extends Fragment {
                 signInWithEmailAndPassword();
                 ((Main)getActivity()).changeLoginStatus();
 
+            }
+        });
+
+        btnResetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ResetPassword fragment = new ResetPassword();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Registration fragment = new Registration();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
             }
         });
 

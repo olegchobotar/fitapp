@@ -8,8 +8,14 @@
         android:title="@string/pref_header_profile">
         <EditTextPreference
             android:inputType="textCapWords"
-            android:key="key_сhange_password"
+            android:key="pref_сhange_email"
+            android:title="@string/change_email"
+            android:textColor="?attr/textColor"/>
+        <EditTextPreference
+            android:inputType="textCapWords"
+            android:key="pref_change_password"
             android:title="@string/change_password"
+            android:password="true"
             android:textColor="?attr/textColor"/>
 
         <SwitchPreference
@@ -38,5 +44,6 @@
             android:key="pref_notifications"
             android:title="@string/pref_notifications"
             android:textColor="?attr/textColor"/>
+
     </PreferenceCategory>
 </PreferenceScreen>
