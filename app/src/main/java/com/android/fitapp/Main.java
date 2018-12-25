@@ -3,6 +3,8 @@ package com.android.fitapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -28,6 +30,10 @@ import com.android.fitapp.programs.ProgramsFragment;
 import com.android.fitapp.settings.SettingsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -35,24 +41,28 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        changeTheme();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_programs);
-
-        }
         contextOfApplication = getApplicationContext();
+        changeTheme();
+        setContentView(R.layout.activity_main);
+        if (isInternetConnected()) {
+            drawer = findViewById(R.id.drawer_layout);
+            NavigationView navigationView = findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramsFragment()).commit();
+                navigationView.setCheckedItem(R.id.nav_programs);
+
+            }
+        } else {
+            Toast.makeText(contextOfApplication, "Internet connection is not available!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
@@ -63,8 +73,13 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        if(!isInternetConnected()) {
+            Toast.makeText(contextOfApplication, "Internet connection is not available!", Toast.LENGTH_SHORT).show();
+        }
+
         changeLoginStatus();
         switch (menuItem.getItemId()) {
             case R.id.nav_add_programs:
@@ -162,4 +177,35 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
     }
 
+    public static boolean isNetworkAvailable(Context context) {
+        final ConnectivityManager cm = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnected();
+    }
+
+    public static boolean isInternetConnected(){
+        Runtime runtime = Runtime.getRuntime();
+        try
+        {
+            Process  mIpAddrProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
+            int mExitValue = mIpAddrProcess.waitFor();
+            System.out.println(" mExitValue "+mExitValue);
+            if(mExitValue==0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        catch (InterruptedException ignore)
+        {
+            ignore.printStackTrace();
+            System.out.println(" Exception:"+ignore);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            System.out.println(" Exception:"+e);
+        }
+        return false;
+    }
 }

@@ -26,6 +26,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class ProgressFragment extends Fragment {
     View view;
     List<Record> records;
     String url = "https://fit-app-by-a1lexen.herokuapp.com/records";
+    GraphView graph;
 
     @Nullable
     @Override
@@ -43,7 +45,7 @@ public class ProgressFragment extends Fragment {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 
-        GraphView graph = view.findViewById(R.id.graph);
+        graph = view.findViewById(R.id.graph);
 
         graph.getLegendRenderer().setVisible(true);
         graph.getViewport().setYAxisBoundsManual(true);
@@ -91,6 +93,8 @@ public class ProgressFragment extends Fragment {
                 series_weight.setColor(Color.WHITE);
                 series_weight.setTitle("Weight");
                 series_weight.setDrawDataPoints(true);
+
+                //Collections.sort(records);
 
                 for (Record r : records) {
                     series_chest.appendData(new DataPoint(new SimpleDateFormat("dd/MM/yyyy").parse(r.getDate()), r.getChest()), true, 100);

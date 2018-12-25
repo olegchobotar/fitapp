@@ -1,5 +1,7 @@
 package com.android.fitapp.programs;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -28,10 +30,13 @@ public class CreateProgramFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
         if (FirebaseAuth.getInstance().getCurrentUser() == null){
             Authorization fragment = new Authorization();
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+            Toast.makeText(getContext(), "You have to log in before using this feature!", Toast.LENGTH_SHORT).show();
         }
 
         view = inflater.inflate(R.layout.program_constructor_layout, container, false);

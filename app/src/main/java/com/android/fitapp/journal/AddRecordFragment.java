@@ -83,6 +83,7 @@ public class AddRecordFragment extends Fragment {
                                 uid);
                         System.out.println(record.getDate());
                         ResponseEntity response = restTemplate.postForEntity(url, record, ResponseEntity.class);
+                        Toast.makeText(getContext(), "The record added successfully!", Toast.LENGTH_SHORT).show();
                     }
 
                 }

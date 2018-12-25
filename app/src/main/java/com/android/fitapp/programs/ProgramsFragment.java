@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.android.fitapp.Main;
 import com.android.fitapp.R;
 import com.android.fitapp.adapter.ProgramsAdapter;
 import com.android.fitapp.entity.ArticleRow;
@@ -30,15 +32,16 @@ public class ProgramsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_programs, container, false);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         RestTemplate restTemplate = new RestTemplate();
 
         restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 
-        Program[] response = restTemplate.getForObject(url+"/programs", Program[].class);
+        Program[] response = restTemplate.getForObject(url + "/programs", Program[].class);
 
-        View view = inflater.inflate(R.layout.fragment_programs, container, false);
+
         listView = view.findViewById(R.id.programs_list);
         programs = new ArrayList();
 
@@ -49,6 +52,8 @@ public class ProgramsFragment extends Fragment {
 
         listView.setAdapter(new ProgramsAdapter(this.getContext(), programs));
 
+
         return view;
     }
+
 }
