@@ -43,6 +43,7 @@ public class JournalFragment extends Fragment {
         StrictMode.setThreadPolicy(policy);
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+
         records = new ArrayList();
         final String uid;
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {

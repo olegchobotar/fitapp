@@ -52,6 +52,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             navigationView.setCheckedItem(R.id.nav_programs);
 
         }
+
+
         contextOfApplication = getApplicationContext();
     }
 
@@ -138,14 +140,14 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (!autoLogin()){
-            if (FirebaseAuth.getInstance().getCurrentUser() != null){
+        if (!autoLogin()) {
+            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
                 FirebaseAuth.getInstance().signOut();
             }
         }
     }
 
-    private boolean autoLogin(){
+    private boolean autoLogin() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         return Boolean.valueOf(sharedPreferences.getBoolean(SettingsActivity.PREF_AUTOLOGIN, false));
     }
