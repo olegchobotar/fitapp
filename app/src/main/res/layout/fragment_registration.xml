@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
+    android:windowSoftInputMode="adjustPan"
     tools:context=".authentification.Registration">
 
     <LinearLayout
@@ -17,7 +18,6 @@
         tools:layout_editor_absoluteY="123dp">
 
         <TextView
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
@@ -60,7 +60,7 @@
             android:inputType="text"
             android:nextFocusDown="@id/edit_text_city"
             android:textColor="?attr/textColor"
-            android:textColorHint="?attr/textHint"  />
+            android:textColorHint="?attr/textHint" />
 
         <EditText
             android:id="@+id/edit_text_city"
@@ -72,7 +72,7 @@
             android:inputType="text"
             android:nextFocusDown="@id/edit_text_password"
             android:textColor="?attr/textColor"
-            android:textColorHint="?attr/textHint"  />
+            android:textColorHint="?attr/textHint" />
 
         <EditText
             android:id="@+id/edit_text_password"
@@ -99,7 +99,7 @@
             android:maxLength="10"
             android:nextFocusDown="@id/button_register"
             android:textColor="?attr/textColor"
-            android:textColorHint="?attr/textHint"  />
+            android:textColorHint="?attr/textHint" />
 
         <Button
             android:id="@+id/button_register"

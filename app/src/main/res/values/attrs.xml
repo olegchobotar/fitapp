@@ -12,5 +12,7 @@
         <attr name="profileButtonBg" format="color"/>
         <attr name="profileButtonBorder" format="color"/>
         <attr name="profileTitle" format="color"/>
+        <attr name="programFirstRow" format="color"/>
+        <attr name="programSecondRow" format="color"/>
     </declare-styleable>
 </resources>

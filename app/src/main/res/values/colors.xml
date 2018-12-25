@@ -22,9 +22,13 @@
     <color name="profileButtonBgLight">#fafafa</color>
     <color name="profileButtonBorderLight">#00bfbf</color>
     <color name="profileTitleColorLight">#d4da19</color>
+    <color name="programFirstRowLight">#fcfcfc</color>
+    <color name="programSecondRowLight">#fff</color>
+
 
     <!--Dark Theme-->
     <color name="backgroundDark">#434343</color>
+    <color name="colorPrimaryDark">#00bfbf</color>
     <color name="colorPrimaryDarkDark">#555959</color>
     <color name="colorAccentDark">#009e9e</color>
     <color name="cardBgDark">#707070</color>
@@ -37,6 +41,10 @@
     <color name="profileButtonBgDark">#707070</color>
     <color name="profileButtonBorderDark">#707070</color>
     <color name="profileTitleColorDark">#d4da19</color>
+    <color name="programFirstRowDark">#434343</color>
+    <color name="programSecondRowDark">#383838</color>
+
+
 
     <color name="grayLight">#fcfcfc</color>
 
