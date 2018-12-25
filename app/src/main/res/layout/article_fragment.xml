@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableRow
-        android:id="@+id/article_tags"
+        android:id="@+id/tags_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -41,6 +41,6 @@
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/article_tags" />
+        app:layout_constraintTop_toBottomOf="@+id/tags_text" />
 
 </android.support.constraint.ConstraintLayout>

@@ -65,7 +65,7 @@ public class ArticleFragment extends Fragment {
             view = inflater.inflate(R.layout.article_fragment, container, false);
             TextView title = view.findViewById(R.id.article_title),
                     text = view.findViewById(R.id.article_text);
-            TableRow tags = view.findViewById(R.id.article_tags);
+            TableRow tags = view.findViewById(R.id.tags_text);
 
             title.setText(program.getTitle());
             text.setText(program.getText());

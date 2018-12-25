@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.fitapp.adapter.AddExerciseAdapter;
 import com.android.fitapp.entity.Program;
@@ -23,6 +24,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class FirstTabFragment extends Fragment {
@@ -56,6 +58,7 @@ public class FirstTabFragment extends Fragment {
             public void onClick(View v) {
                 if (CreateProgramFragment.withExercises) {
                     ResponseEntity response = restTemplate.postForEntity(url + "/programs", dataToProgram(),ResponseEntity.class);
+                    Toast.makeText(getContext(), "New program successfully added!", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -65,10 +68,34 @@ public class FirstTabFragment extends Fragment {
     }
 
     private Program dataToProgram() {
-        ArrayList<String> tags = new ArrayList(Arrays.asList("ABS", "Legs", "Chest", "Arms"));
+        List<String> tags = getTags((view.findViewById(R.id.article_tags)));
         String title = ((EditText)view.findViewById(R.id.title)).getText().toString();
+        if (title.isEmpty()) {
+            ((EditText)view.findViewById(R.id.title)).setError("The field cannot be empty!");
+            view.findViewById(R.id.title).requestFocus();
+        }
+
         String desc = ((EditText)view.findViewById(R.id.description)).getText().toString();
+        if (desc.isEmpty()) {
+            ((EditText)view.findViewById(R.id.description)).setError("The field cannot be empty!");
+            view.findViewById(R.id.description).requestFocus();
+        }
+
         String text = ((EditText)view.findViewById(R.id.text)).getText().toString();
+        if (text.isEmpty()) {
+            ((EditText)view.findViewById(R.id.text)).setError("The field cannot be empty!");
+            view.findViewById(R.id.text).requestFocus();
+        }
+
         return new Program(title, text, desc, tags, AddExerciseAdapter.edits);
+    }
+
+    private List<String> getTags(View tagsView) {
+        String tags_src = ((EditText)tagsView).getText().toString();
+        if (tags_src.isEmpty()){
+            ((EditText) tagsView).setError("Field cannot be empty!");
+            tagsView.requestFocus();
+        }
+        return Arrays.asList(tags_src.split(","));
     }
 }
