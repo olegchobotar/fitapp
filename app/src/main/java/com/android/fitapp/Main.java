@@ -19,20 +19,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.android.fitapp.journal.JournalFragment;
 import com.android.fitapp.profile.ProfileFragment;
 import com.android.fitapp.navHeader.NavHeaderAuthorized;
 import com.android.fitapp.navHeader.NavHeaderNotAuthorized;
 import com.android.fitapp.programs.CreateProgramFragment;
 import com.android.fitapp.programs.ProgramsFragment;
-
 import com.android.fitapp.settings.SettingsActivity;
 import com.google.firebase.auth.FirebaseAuth;
-
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 
 public class Main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +36,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        changeTheme();
         super.onCreate(savedInstanceState);
         contextOfApplication = getApplicationContext();
         changeTheme();
@@ -72,7 +68,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         changeLoginStatus();
 
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -153,8 +148,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (!autoLogin()){
-            if (FirebaseAuth.getInstance().getCurrentUser() != null){
+        if (!autoLogin()) {
+            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
                 FirebaseAuth.getInstance().signOut();
             }
         }
@@ -175,12 +170,6 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
                 setTheme(R.style.AppTheme);
                 break;
         }
-    }
-
-    public static boolean isNetworkAvailable(Context context) {
-        final ConnectivityManager cm = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        return activeNetwork != null && activeNetwork.isConnected();
     }
 
     public static boolean isInternetConnected(){
