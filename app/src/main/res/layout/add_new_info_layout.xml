@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    android:background="?attr/backgroundColor">
 
     <Button
         android:id="@+id/send_record_btn"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="?attr/buttonColor"
+        android:background="?attr/colorPrimary"
         android:text="Add info" />
 
     <TextView
@@ -23,7 +23,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="213dp"
         android:layout_marginTop="125dp"
-        android:text="Weight:" />
+        android:text="Weight:"
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/weight_info"
@@ -57,7 +59,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="125dp"
-        android:text="Height:" />
+        android:text="Height:"
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/textView55"
@@ -67,7 +71,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="213dp"
         android:layout_marginTop="63dp"
-        android:text="Right arm:" />
+        android:text="Right arm:"
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/right_arm_info"
@@ -101,7 +107,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="63dp"
-        android:text="Left arm:" />
+        android:text="Left arm:"
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/textView31"
@@ -111,8 +119,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="7dp"
         android:layout_marginTop="0dp"
-
-        android:text="Waist:" />
+        android:text="Waist:"
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/waist_info"
@@ -132,7 +141,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:text="Chest:"
-        />
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/chest_info"

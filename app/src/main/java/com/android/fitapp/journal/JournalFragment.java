@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.android.fitapp.Main;
 import com.android.fitapp.R;
 import com.android.fitapp.adapter.JournalAdapter;
+import com.android.fitapp.authentification.Authorization;
 import com.android.fitapp.entity.Record;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -39,6 +40,12 @@ public class JournalFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null){
+            Authorization fragment = new Authorization();
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+        }
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         RestTemplate restTemplate = new RestTemplate();

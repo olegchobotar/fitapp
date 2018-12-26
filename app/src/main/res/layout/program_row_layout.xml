@@ -30,7 +30,7 @@
         android:paddingStart="5dp"
         android:paddingEnd="20dp"
         android:text="Description of program"
-        android:textColor="?attr/textHint"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/tags"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

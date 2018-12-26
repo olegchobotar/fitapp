@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.android.fitapp.R;
 
 import com.android.fitapp.adapter.CommentAdapter;
+import com.android.fitapp.authentification.Authorization;
 import com.android.fitapp.entity.ArticleRow;
 import com.android.fitapp.entity.Comment;
 import com.android.fitapp.entity.User;
@@ -65,49 +66,52 @@ public class CommentsFragment extends Fragment {
     private FirebaseUser firebaseUser;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_comments, container, false);
+        if (FirebaseAuth.getInstance().getCurrentUser() == null){
+            Authorization fragment = new Authorization();
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+        } else {
+            recyclerView = view.findViewById(R.id.comments_recycler_view_);
+            recyclerView.setHasFixedSize(true);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            commentList = new ArrayList<>();
+            commentAdapter = new CommentAdapter(getActivity(), commentList);
+            recyclerView.setAdapter(commentAdapter);
 
-        recyclerView = view.findViewById(R.id.comments_recycler_view_);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        commentList = new ArrayList<>();
-        commentAdapter = new CommentAdapter(getActivity(),commentList);
-        recyclerView.setAdapter(commentAdapter);
+            commentField = view.findViewById(R.id.add_comment);
+            imageProfile = view.findViewById(R.id.image_profile);
+            post = view.findViewById(R.id.post);
 
-        commentField = view.findViewById(R.id.add_comment);
-        imageProfile = view.findViewById(R.id.image_profile);
-        post = view.findViewById(R.id.post);
+            Intent intent = getActivity().getIntent();
 
-        Intent intent = getActivity().getIntent();
+            ArticleRow row = (ArticleRow) getArguments().getSerializable("program");
+            articleId = row.getId();
 
-        ArticleRow row = (ArticleRow) getArguments().getSerializable("program");
-        articleId = row.getId();
+            //publisherId = intent.getStringExtra("publisherId");
 
-        //publisherId = intent.getStringExtra("publisherId");
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        post.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (firebaseUser != null) {
-                    if (TextUtils.isEmpty(commentField.getText())) {
-                        Toast.makeText(getActivity(), "You can`t send empty comment", Toast.LENGTH_LONG).show();
+            post.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (firebaseUser != null) {
+                        if (TextUtils.isEmpty(commentField.getText())) {
+                            Toast.makeText(getActivity(), "You can`t send empty comment", Toast.LENGTH_LONG).show();
+                        } else {
+                            addComment();
+                        }
                     } else {
-                        addComment();
+                        Toast.makeText(getActivity(), "Please login", Toast.LENGTH_LONG).show();
                     }
-                } else{
-                    Toast.makeText(getActivity(), "Please login", Toast.LENGTH_LONG).show();
+
                 }
-
-            }
-        });
-        getImage();
-        readComments();
-
+            });
+            getImage();
+            readComments();
+        }
         return view;
     }
 

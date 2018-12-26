@@ -31,7 +31,6 @@ public class FirstTabFragment extends Fragment {
     View view;
     Button createBtn;
     String url = "https://fit-app-by-a1lexen.herokuapp.com";
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
