@@ -8,7 +8,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/records_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundColor"/>
 
     <Button
         android:id="@+id/new_record_btn"
@@ -17,5 +18,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Add new Record"
-        android:background="?attr/buttonColor"/>
+        android:background="?attr/colorPrimary"/>
 </RelativeLayout>

@@ -12,7 +12,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="32dp"
-        android:text="Description:" />
+        android:text="Description:"
+        android:textColor="?attr/textColor"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/name"
@@ -26,7 +28,8 @@
         android:hint="Exercise name"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColorHint="?attr/textHint"/>
 
     <EditText
         android:id="@+id/reps"
@@ -38,8 +41,10 @@
         android:layout_toEndOf="@+id/name"
         android:ems="5"
         android:hint="Reps"
-        android:inputType="textPersonName"
-        android:textSize="16sp" />
+        android:digits="0123456789."
+        android:inputType="number"
+        android:textSize="16sp"
+        android:textColorHint="?attr/textHint"/>
 
     <EditText
         android:id="@+id/rest"
@@ -51,8 +56,10 @@
         android:layout_toEndOf="@+id/reps"
         android:ems="5"
         android:hint="Rest"
-        android:inputType="textPersonName"
-        android:textSize="16sp" />
+        android:digits="0123456789."
+        android:inputType="number"
+        android:textSize="16sp"
+        android:textColorHint="?attr/textHint"/>
 
     <EditText
         android:id="@+id/description"

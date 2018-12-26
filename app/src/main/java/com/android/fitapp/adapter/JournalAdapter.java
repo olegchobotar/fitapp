@@ -42,8 +42,8 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Record record = records.get(i);
-        if (record != null) { if (i % 2 == 0) viewHolder.getView().setBackgroundResource(R.color.grayLight);
-            else viewHolder.getView().setBackgroundResource(R.color.colorWhite);
+        if (record != null) { if (i % 2 == 0) viewHolder.getView().setBackgroundResource(R.color.backgroundDark);
+            else viewHolder.getView().setBackgroundResource(R.color.colorPrimaryDarkDark);
 
             double bmi = record.getWeight() / Math.pow(record.getHeight()/100.0, 2);
             viewHolder.getBMI().setText(String.valueOf(String.format("%.2f", bmi)));

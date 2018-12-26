@@ -35,7 +35,7 @@
     <color name="tagBgDark">#222222</color>
     <color name="tagColorDark">#444444</color>
     <color name="textColorDark">#eeeeee</color>
-    <color name="textHintDark">#cccccc</color>
+    <color name="textHintDark">#7e7e7e</color>
     <color name="buttonColorDark">#be050505</color>
     <color name="profileButtonColorDark">#cbd8da</color>
     <color name="profileButtonBgDark">#707070</color>

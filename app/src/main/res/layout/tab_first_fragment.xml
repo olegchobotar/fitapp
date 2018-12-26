@@ -27,7 +27,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="5dp"
-                android:text="Title:" />
+                android:textColor="?attr/textColor"
+                android:text="Title:"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/title"
@@ -51,7 +53,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="Tags:" />
+                android:text="Tags:"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/article_tags"
@@ -77,7 +81,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="Description:" />
+                android:text="Description:"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/description"
@@ -103,7 +109,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="5dp"
-                android:text="Full text:" />
+                android:text="Full text:"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/text"
@@ -127,7 +135,9 @@
                 android:layout_alignStart="@+id/title"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="1dp"
-                android:text="Create exercises" />
+                android:text="Create exercises"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp"/>
         </LinearLayout>
 
     </ScrollView>
