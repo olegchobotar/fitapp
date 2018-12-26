@@ -43,9 +43,9 @@ public class ProgramsAdapter extends ArrayAdapter<ArticleRow> {
         View view = inflater.inflate(R.layout.program_row_layout, parent, false);
 
         if (position % 2 == 0) {
-            view.setBackgroundResource(R.color.backgroundDark);
+            view.setBackgroundColor(Main.themeAttributeToColor(R.attr.programFirstRow, context, R.color.white));
         } else {
-            view.setBackgroundResource(R.color.colorPrimaryDarkDark);
+            view.setBackgroundColor(Main.themeAttributeToColor(R.attr.programSecondRow, context, R.color.white));
         }
         TextView title = view.findViewById(R.id.title),
                 desc = view.findViewById(R.id.desc);

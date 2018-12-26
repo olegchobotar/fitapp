@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.fitapp.Main;
 import com.android.fitapp.R;
 import com.android.fitapp.entity.Record;
 
@@ -42,8 +43,9 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Record record = records.get(i);
-        if (record != null) { if (i % 2 == 0) viewHolder.getView().setBackgroundResource(R.color.backgroundDark);
-            else viewHolder.getView().setBackgroundResource(R.color.colorPrimaryDarkDark);
+        if (record != null) {
+            if (i % 2 == 0) viewHolder.getView().setBackgroundColor(Main.themeAttributeToColor(R.attr.programFirstRow, context, R.color.white));
+            else viewHolder.getView().setBackgroundColor(Main.themeAttributeToColor(R.attr.programSecondRow, context, R.color.white));
 
             double bmi = record.getWeight() / Math.pow(record.getHeight()/100.0, 2);
             viewHolder.getBMI().setText(String.valueOf(String.format("%.2f", bmi)));

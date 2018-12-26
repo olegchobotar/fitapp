@@ -70,6 +70,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
         final Comment comment = mComment.get(i);
 
         if(comment != null){
+            if (i % 2 == 0) viewHolder.getView().setBackgroundColor(Main.themeAttributeToColor(R.attr.programFirstRow, mContext, R.color.white));
+            else viewHolder.getView().setBackgroundColor(Main.themeAttributeToColor(R.attr.programSecondRow, mContext, R.color.white));
             viewHolder.getCommentMessage().setText(String.valueOf(comment.getComment()));
 
             getUserInfo(viewHolder, comment.getPublisher());

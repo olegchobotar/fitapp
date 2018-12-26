@@ -3,6 +3,7 @@ package com.android.fitapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
@@ -12,11 +13,13 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.widget.Toast;
 import com.android.fitapp.journal.JournalFragment;
@@ -196,5 +199,21 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             System.out.println(" Exception:"+e);
         }
         return false;
+    }
+
+    public static int themeAttributeToColor(int themeAttributeId,
+                                            Context context,
+                                            int fallbackColorId) {
+        TypedValue outValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        boolean wasResolved =
+                theme.resolveAttribute(
+                        themeAttributeId, outValue, true);
+        if (wasResolved) {
+            return ContextCompat.getColor(
+                    context, outValue.resourceId);
+        } else {
+            return fallbackColorId;
+        }
     }
 }

@@ -21,8 +21,8 @@
         <item name="android:windowBackground">@color/backgroundLight</item>
         <item name="android:textColorPrimary">@color/textColorLight</item>
         <item name="android:textColorSecondary">@color/textHintLight</item>
-        <item name="programFirstRow">@color/textHintDark</item>
-        <item name="programSecondRow">@color/textHintDark</item>
+        <item name="programFirstRow">@color/white</item>
+        <item name="programSecondRow">@color/grayLight</item>
 
 
     </style>
@@ -47,8 +47,8 @@
         <item name="android:windowBackground">@color/backgroundDark</item>
         <item name="android:textColorPrimary">@color/textColorDark</item>
         <item name="android:textColorSecondary">@color/textHintDark</item>
-        <item name="programFirstRow">@color/textHintDark</item>
-        <item name="programSecondRow">@color/textHintDark</item>
+        <item name="programFirstRow">@color/programFirstRowDark</item>
+        <item name="programSecondRow">@color/programSecondRowDark</item>
         <!--<item name="android:textColorAlertDialogListItem">@color/colorPrimary</item>-->
         <!-- AppCompat Dialog Attributes -->
         <!--<item name="android:dialogTheme">@style/AppCompatDialogDark</item>-->
